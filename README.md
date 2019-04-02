@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # AngularApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.0.
@@ -25,3 +26,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+=======
+# MEAN-stack-project
+A book review site built with Angular front end and Node, Express backend with MongoDB database.
+>>>>>>> 0b8bf15bc91370620abcfb488f28864e478efe27

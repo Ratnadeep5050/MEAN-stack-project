@@ -3,6 +3,37 @@
   margin-top: 1rem;
 }
 
-.info-text{
+.intro{
   text-align: center;
+  font: caption;
+  font-size: large;
+  font-style: italic;
+  color: darkcyan;
+}
+
+.intro-2{
+  text-align: center;
+  font: caption;
+  font-size: large;
+  font-style: italic;
+  color: darkcyan;
+}
+
+mat-spinner {
+  margin: auto;
+}
+
+mat-paginator {
+  margin: 1rem;
+}
+
+.post-image {
+  width: 100%;
+}
+
+.post-image img {
+  width: 20%;
+  height: 20%;
+  margin-left: 40%;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5)
 }

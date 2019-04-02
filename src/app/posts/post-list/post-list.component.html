@@ -1,13 +1,24 @@
-<mat-accordion multi="true" *ngIf="posts.length > 0">
+<p class="intro">
+  IntrovertReaders is a place where you post review about the books you have read which let others know about them, may they haven't read yours and also may you haven't read their ones, so explore !
+</p>
+<p class="intro-2">
+  We don't care about who you are, we just want to know what books you have read that we haven't yet.
+</p>
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<mat-accordion multi="true" *ngIf="posts.length > 0 && !isLoading">
   <mat-expansion-panel *ngFor="let post of posts">
     <mat-expansion-panel-header>
       {{ post.title }}
     </mat-expansion-panel-header>
+    <div class="post-image">
+      <img [src]="post.imagePath" [alt]="post.title">
+    </div>
     <p>{{ post.content }}</p>
-    <mat-action-row>
-      <button mat-button color="primary">EDIT</button>
+    <mat-action-row *ngIf="userIsAuthenticated && userId === post.creator">
+      <button mat-button color="primary" [routerLink]="['edit', post.id]">EDIT</button>
       <button mat-button color="warn" (click)="onDelete(post.id)">DELETE</button>
     </mat-action-row>
   </mat-expansion-panel>
 </mat-accordion>
-<p class="info-text mat-body-1" *ngIf="posts.length <= 0">No posts Yet</p>
+<mat-paginator [length]="totalPosts" [pageSize]="postsPerPage" [pageSizeOptions]="pageSizeOptions" (page)="onPageChanged($event)" *ngIf="posts.length > 0"></mat-paginator>
+<p class="info-text mat-body-1" *ngIf="posts.length <= 0 && !isLoading">No posts Yet</p>
